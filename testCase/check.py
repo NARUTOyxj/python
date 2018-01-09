@@ -66,49 +66,31 @@
 
 #test 6
 #访问限制
-# class StudentC(object):
-# 	"""docstring for StudentC"""
-# 	def __init__(self, name, gender):
-# 		self.__name = name
-# 		self.__gender = gender
+class StudentC(object):
+	"""docstring for StudentC"""
+	def __init__(self, name, gender):
+		self.__name = name
+		self.__gender = gender
 
-# 	def get_name(self):
-# 		return self.__name
+	def get_name(self):
+		return self.__name
 
-# 	def get_gender(self):
-# 		return self.__gender
+	def get_gender(self):
+		return self.__gender
 
-# 	def set_name(self, name):
-# 		self.__name = name
+	def set_name(self, name):
+		self.__name = name
 
-# 	def set_gender(self, gender):
-# 		self.__gender = gender
+	def set_gender(self, gender):
+		self.__gender = gender
 		
 
-# Alice = StudentC('Alice','female')
-# Alice.set_gender('female')
-# print(Alice.get_gender())
+Alice = StudentC('Alice','female')
+Alice.set_gender('female')
+print(Alice.get_gender())
 
-#test 7
-class Student(object):
-    count = 0
 
-    def __init__(self, name):
-        self.name = name
 
-if Student.count != 0:
-    print('测试失败!1')
-else:
-    bart = Student('Bart')
-    if Student.count != 1:
-        print('测试失败!2')
-    else:
-        lisa = Student('Bart')
-        if Student.count != 2:
-            print('测试失败!3')
-        else:
-            print('Students:', Student.count)
-            print('测试通过!')
      	
 
 
