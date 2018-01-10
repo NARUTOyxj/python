@@ -11,7 +11,6 @@ class Screen(object):
 		else:
 			self._width = value
 		
-
 	@property
 	def height(self):
 		return self._height
