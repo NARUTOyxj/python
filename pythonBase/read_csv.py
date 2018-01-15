@@ -10,8 +10,9 @@ class testCase(object):
 		path = '../testFile/' + self.fileName
 		with open(path, newline='') as f:
 			reader = csv.reader(f)
-			for row in f:
-				print(row)
+			for i,rows in enumerate(f):
+				if i == 1:
+					print(rows)
 
 test = testCase('userInfo.csv')
 test.getData()
