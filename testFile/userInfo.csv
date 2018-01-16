@@ -1,3 +1,4 @@
-nickname,password,system
-plat_yxj,123456,scmpcapp
-admin,1234567,
+nickname,password,system,result
+plat_yxj,123456,scmpcapp,0
+admin,1234567,,0
+,123456,,2
