@@ -21,12 +21,11 @@ import json
 
 
 url = 'http://scmbase.loongjoy.com/api/auth/postToken'
-data = {'nickname': 'plat06','password':'123456','fromSys':'scmpcapp','lang':'zh'}
-r = requests.post(url, data=data)  
-r = requests.post(url, data=data)  
+data = {'lang':'en','fromSys':'scmpcapp','nickname': 'plat_yxj','password':'123456'}
+r = requests.post(url, data=data)
 # 获取 接口返回的数据信息并解析（如果返回的是json格式的话）  
-json_data = json.loads(r.text)  
-print(json_data)
+# json_data = json.loads(r.text)  
+print(r.json())
 
 
 
