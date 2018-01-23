@@ -1,14 +1,11 @@
-import urllib.request
-import urllib.parse
+# import urllib.request
+# import urllib.parse
 import requests  
 import json 
-
-# params = urllib.parse.urlencode({'username': 'plat_yxj','password':'123456'})
-# url = "http://scmbase.loongjoy.com/api/auth/postToken?%s" % params
-# with urllib.request.urlopen(url) as f:
-# 	print(f.read().decode('utf-8'))
-
-#python标准库
+import unittest
+import HTMLTestRunner
+import time
+# python标准库
 
 # DATA = urllib.parse.urlencode({'nickname': 'plat_yxj','password':'123456','fromSys':'scmpcapp','lang':'zh'}).encode('utf-8')
 # req = urllib.request.Request(url='http://scmbase.loongjoy.com/api/auth/postToken', data=DATA,method='POST')
@@ -18,14 +15,35 @@ import json
 # print(f.status)
 # print(f.reason)
 
+class TestLogin(unittest.TestCase):
+	"""docstring for TestLogin"""
+	def setUp(self):
+		self.base_url = 'http://scmbase.loongjoy.com/api/auth/postToken'
 
+	def test_login(self):
+		self.data = {'lang':'en','fromSys':'scmpcapp','nickname': 'plat_yxj','password':'123456'}
+		r = requests.post(self.base_url, data=self.data)
+		# 获取返回的所有数据
+		print(r.status_code)
+		json_data = json.loads(r.text) 
+		print(json_data["data"]["token"])  #获取返回json数据中的token
+		#分段
+		# print(r.json())
+		
+if __name__ == '__main__':
+	suite = unittest.TestSuite()
+	suite.addTest(TestLogin("test_login"))
+	now = time.strftime("%Y-%m-%d %H_%M_%S", time.localtime(time.time()))
 
-url = 'http://scmbase.loongjoy.com/api/auth/postToken'
-data = {'lang':'en','fromSys':'scmpcapp','nickname': 'plat_yxj','password':'123456'}
-r = requests.post(url, data=data)
-# 获取 接口返回的数据信息并解析（如果返回的是json格式的话）  
-# json_data = json.loads(r.text)  
-print(r.json())
+	#定义个报告存放路径，支持相对路径。
+	filename = "D:\\PythonTest\\interfaceTest\\result\\"+now+'result.html'
+	fp = open(filename, 'wb')
+	runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='自动化测试报告', description='XX平台V1.0')
+    #普通执行测试用例，无报告
+	# runner = unittest.TextTestRunner()
+	runner.run(suite)
+
+user01 = TestLogin()
 
 
 
