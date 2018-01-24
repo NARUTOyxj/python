@@ -33,10 +33,10 @@ class TestLogin(unittest.TestCase):
 		# print(r.json())
 		#将获取的token写入到config.ini中
 		cf = configparser.ConfigParser()
-		cf.read('../config.ini')
-		cf.add_section('token')
+		cf.read('../testFile/config.ini')
+		# cf.add_section('token')    #如果token不存在的话，添加token section
 		cf.set('token','token',json_data["data"]["token"])
-		cf.write(open('../config.ini','w'))
+		cf.write(open('../testFile/config.ini','w'))
 
 		
 if __name__ == '__main__':
