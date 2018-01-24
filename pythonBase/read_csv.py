@@ -7,11 +7,11 @@ class testCase(object):
 		self.fileName = fileName
 
 	def getData(self):
-		path = '../testFile/' + self.fileName
+		path = 'D:/SCM/python/testFile/' + self.fileName
 		with open(path, newline='') as f:
 			reader = csv.reader(f)
 			for i,rows in enumerate(f):
-				if i == 1:
+				if i > 0:
 					print(rows)
 
 test = testCase('userInfo.csv')
