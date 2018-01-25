@@ -22,6 +22,7 @@ class TestLogin(unittest.TestCase):
 		self.base_url = 'http://scmbase.loongjoy.com/api/auth/postToken'
 
 	def test_login(self):
+		
 		self.data = {'lang':'en','fromSys':'scmpcapp','nickname': 'plat_yxj','password':'123456'}
 		r = requests.post(self.base_url, data=self.data)
 		# 获取返回的所有数据

@@ -1,4 +1,5 @@
 import csv
+import io
 
 class testCase(object):
 	"""docstring for testCase"""
@@ -7,7 +8,7 @@ class testCase(object):
 		self.fileName = fileName
 
 	def getData(self):
-		path = 'D:/SCM/python/testFile/' + self.fileName
+		path = '../testFile/' + self.fileName
 		with open(path, newline='') as f:
 			reader = csv.reader(f)
 			for i,rows in enumerate(f):
