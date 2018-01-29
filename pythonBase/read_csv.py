@@ -10,10 +10,10 @@ class testCase(object):
 	def getData(self):
 		path = '../testFile/' + self.fileName
 		with open(path, newline='') as f:
-			reader = csv.reader(f)
-			for i,rows in enumerate(f):
-				if i > 0:
-					print(rows)
+			reader = csv.DictReader(f)
+			for row in reader:
+				print(row['nickname'],row['password'])
+			
 
 test = testCase('userInfo.csv')
 test.getData()
