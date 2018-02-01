@@ -1,5 +1,9 @@
 import requests
-import readConfig as readConfig
+# import readConfig as readConfig
+import sys
+sys.path.append("..")
+from testFile.readConfig import *
+readConfig().get_http
 
 localReadConfig = readConfig.ReadConfig()
 
@@ -29,3 +33,6 @@ class ConfigHttp:
         response = requests.get(self.url, params=self.params)
         # response.raise_for_status()
         return response
+
+test = ConfigHttp()
+print(test.get())
