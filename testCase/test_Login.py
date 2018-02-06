@@ -1,5 +1,3 @@
-# import urllib.request
-# import urllib.parse
 import requests  
 import json 
 import unittest
@@ -8,21 +6,17 @@ import time
 import configparser
 import csv
 import io
-# python标准库
-
-# DATA = urllib.parse.urlencode({'nickname': 'plat_yxj','password':'123456','fromSys':'scmpcapp','lang':'zh'}).encode('utf-8')
-# req = urllib.request.Request(url='http://scmbase.loongjoy.com/api/auth/postToken', data=DATA,method='POST')
-# with urllib.request.urlopen(req) as f:
-#     pass
-
-# print(f.status)
-# print(f.reason)
+import sys
+sys.path.append('..\\testFile')
+import readConfig
 
 class TestLogin(unittest.TestCase):
 	"""docstring for TestLogin"""
 
-	def setUp(self):
-		self.base_url = 'http://scmbase.loongjoy.com/api/auth/postToken'
+	def setUp(self, api):
+		readData = readConfig.ReadConfig()
+		self.base_url = readData.get_section('HTTP','baseurl') + 'api/auth/postToken'
+		print(self.base_url)
 
 	def test_login(self):
 		path = '..//testFile//userInfo.csv'
