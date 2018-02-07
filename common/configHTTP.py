@@ -10,8 +10,8 @@ localReadConfig = readConfig.ReadConfig()
 class ConfigHttp:
     def __init__(self):
         global host, port, timeout
-        host = localReadConfig.get_http("baseurl")
-        port = localReadConfig.get_http("port")
+        host = localReadConfig.get_section('HTPP','baseurl')
+        port = localReadConfig.get_section('port')
 
     def set_url(self, url):
         self.url = host + url
