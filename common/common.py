@@ -5,7 +5,7 @@ from xlrd import open_workbook
 def get_xls(xls_name, sheet_name):
     cls = []
     # get xls file's path
-    xlsPath = os.path.join("D:\SCM\python\\testFile", xls_name)
+    xlsPath = os.path.join("..\\testFile", xls_name)
     # open xls file
     file = open_workbook(xlsPath)
     # get sheet by name
