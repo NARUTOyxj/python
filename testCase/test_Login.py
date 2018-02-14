@@ -51,7 +51,7 @@ if __name__ == '__main__':
 	fp = open(filename, 'wb')
 	runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='自动化测试报告', description='XX平台V1.0')
 	'''
-    #普通执行测试用例，无报告
+    #普通执行测试用例，无报告B
 	runner = unittest.TextTestRunner()
 	runner.run(suite)
 
