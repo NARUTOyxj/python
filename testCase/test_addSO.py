@@ -22,7 +22,7 @@ class addSO(unittest.TestCase):
 
 	def test_login(self):
 		path = '..//testFile//userInfo.csv'
-        base_args = common_args(pcapp)
+		base_args = common_args(pcapp)
 		with open(path, newline='') as f:
 			reader = csv.DictReader(f)
 			for row in reader:
