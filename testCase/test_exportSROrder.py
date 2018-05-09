@@ -11,10 +11,10 @@ import unittest, time, re
 
 class ExportSr(unittest.TestCase):
     def setUp(self):
-        chromeOptions = webdriver.ChromeOptions()
-        prefs = {'download.default_directory':1}
-        chromeOptions.add_experimental_option('prefs',prefs)
-        self.driver = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        prefs = {'profile.default_content_settings.popups': 0, 'download.default_directory': 'e:\\downloads'}
+        options.add_experimental_option('prefs', prefs)
+        self.driver = webdriver.Chrome(options=options)
         self.driver.implicitly_wait(30)
         self.base_url = "http://scmpcapp.loongjoy.com/"
         self.verificationErrors = []
