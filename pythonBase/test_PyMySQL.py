@@ -1,7 +1,7 @@
 import pymysql
  
 # 打开数据库连接
-db = pymysql.connect("localhost","viewer","Lz123321!#@$","scmcrm",3306)
+db = pymysql.connect("120.76.232.203","viewer","Lz123321!#@$","scmcrm",3306)
  
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
